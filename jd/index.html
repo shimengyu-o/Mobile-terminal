@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable = no">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>myjd</title>
+  <script type="text/javascript">
+      window.onload = function(){
+        //头部导航栏随着页面滚动的距离变大  颜色逐渐渐变 当头部离开banner时  颜色不在变化
+        var top = document.querySelector('.top');
+        var banner = document.querySelector('.banner');
+        var dis = banner.offsetTop + banner.offsetHeight;
+
+        window.onscroll = function(){
+          //当前卷进去的距离
+          var scrollTop = document.body.scrollTop;
+          //当前距离与总距离的比例
+          var sbr = scrollTop/dis;
+              sbr = sbr>1?1:sbr;
+          top.style.backgroundColor = 'rgba(201,21,35,'+sbr+')';
+        }
+        // banner轮播
+        var swiperUl = document.querySelector('.swiper');
+        var swiperPoints = document.querySelector('.swiper-points').children;
+        var count = 1;
+        //每隔一秒  改变图片的位置
+        setInterval(function(){
+          count++;
+          // console.log(count);
+          swiperUl.style.transition = 'all .4s ease';
+          swiperUl.style.transform = 'translateX(-'+count*10+'%)';
+          for(var i = 0 ;i < swiperPoints.length;i++){
+            swiperPoints[i].setAttribute('class','');
+            if(count == 9){
+              swiperPoints[0].classList.add('current');
+            }else{
+              swiperPoints[count-1].classList.add('current');
+            }
+          }
+        },1000)
+        //count=9 实际上跑到了第十张   在本轮次结束时加上监听事件
+          swiperUl.addEventListener('transitionend',function(){
+            if(count >= 9){
+              count = 1;
+              //过渡置空
+              swiperUl.style.transition = '';
+              swiperUl.style.transform = 'translateX(-'+count*10+'%)';
+            }
+          })
+
+        //秒杀倒计时
+        var timeStr = '2017-10-1 22:00:00';
+        var ele = document.querySelector('.second-box');
+        var endTime = new Date(timeStr);
+        var endTimeLong = endTime.getTime();
+        setInterval(function(){
+          var nowTime = new Date();
+          var nowTimeLong = nowTime.getTime();
+          var cha = endTimeLong - nowTimeLong;
+          var s = 1000;
+          var m = s*60;
+          var h = m*60;
+          var d = h*24;
+          var day = Math.floor(cha/d);
+          var hour = Math.floor((cha%d)/h);
+          var hG = hour%10;
+          var hS = (hour - hG)/10;
+          var min = Math.floor((cha%h)/m);
+          var mG = min%10;
+          var mS = (min-mG)/10;
+          var sec = Math.floor((cha%m)/s);
+          var sG = sec%10;
+          var sS = (sec-sG)/10;
+          ele.innerHTML = '<span>'+hS+'</span>'+'<span>'+hG+'</span>'+'<span>:</span>'+'<span>'+mS+'</span>'+'<span>'+mG+'</span>'+'<span>:</span>'+'<span>'+sS+'</span>'+'<span>'+sG+'</span>';
+        },1000)
+
+      }
+  </script>
+</head>
+<body>
+  <!-- 外包的盒子 -->
+  <div class="layer">
+    <!-- 头部开始 -->
+    <!-- 导航栏开始 -->
+    <div class="top">
+      <a href="#" class= "icon-logo"></a>
+      <div class="search">
+        <input type="search" name="" value="" placeholder="      中兴A1 预约免费抽手机">
+        <a href="#" class="icon-search"></a>
+      </div>
+      <span>登录</span>
+    </div>
+    <!-- 导航栏结束 -->
+    <!-- banner 开始 -->
+    <div class="banner">
+      <ul class="swiper">
+        <li><a href=""><img src="img/l8.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l1.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l2.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l3.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l4.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l5.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l6.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l7.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l8.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/l1.jpg" alt=""></a></li>
+      </ul>
+      <ol class="swiper-points">
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+    <!-- banner结束 -->
+  <!-- 头部结束 -->
+  <!-- 分类开始 -->
+  <div class="categray">
+    <ul>
+      <li>
+        <a href=""><img src="img/nav0.png" alt=""></a>
+        <p>分类查询</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav1.png" alt=""></a>
+        <p>物流查询</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav2.png" alt=""></a>
+        <p>购物车</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav3.png" alt=""></a>
+        <p>我的京东</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav4.png" alt=""></a>
+        <p>充值</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav5.png" alt=""></a>
+        <p>领券中心</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav6.png" alt=""></a>
+        <p>京东超市</p>
+      </li>
+      <li>
+        <a href=""><img src="img/nav7.png" alt=""></a>
+        <p>我的关注</p>
+      </li>
+    </ul>
+  </div>
+  <!-- 分类结束 -->
+  <!-- 商品区域开始 -->
+  <div class="goods">
+    <!-- 秒杀活动 -->
+    <div class="second">
+      <div class="second-top">
+        <div class="second-kill">
+          <a href="" class="icon-kill"></a>
+          <span>掌上秒杀</span>
+          <div class="second-box">
+             <!-- <span>0</span>
+             <span>1</span>
+             <span>:</span>
+             <span>3</span>
+             <span>3</span>
+             <span>:</span>
+             <span>3</span>
+             <span>3</span> -->
+          </div>
+        </div>
+        <a href="">更多></a>
+      </div>
+      <div class="second-list">
+        <ul>
+          <li>
+            <a href=""><img src="img/seckill_1.jpg" alt=""></a>
+            <p class="new">￥12.12</p>
+            <p class="old">￥26.60</p>
+          </li>
+          <li>
+            <a href=""><img src="img/seckill_1.jpg" alt=""></a>
+            <p class="new">￥12.12</p>
+            <p class="old">￥26.60</p>
+          </li>
+          <li>
+            <a href=""><img src="img/seckill_1.jpg" alt=""></a>
+            <p class="new">￥12.12</p>
+            <p class="old">￥26.60</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="shopping">
+      <div class="shopping-top">
+        <span>超值购</span>
+      </div>
+      <div class="shopping-list">
+        <a href="" class="pro1"><img src="img/cp1.jpg" alt=""></a>
+        <a href="" class="pro2"><img src="img/cp2.jpg" alt=""></a>
+        <a href="" class="pro3"><img src="img/cp3.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <!-- 商品区域结束 -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+*,::after,::before{
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  //sans-serif手机端默认字体
+  font-family: 'MicroSoft YaHei',sans-serif;
+}
+ul,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+/*清除手机浏览器默认样式-webkit-appearance: none;*/
+input,textarea{
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+.clr-l{
+  clear: left;
+}
+.clr-r{
+  clear: right;
+}
+/*应用在需要清楚浮动的大盒子*/
+.clearfix::before,.clearfix::after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}

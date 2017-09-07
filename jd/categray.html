@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/categray.css">
+  <title>Document</title>
+  <!-- <script type="text/javascript">
+    window.onload = function(){
+      var leftUl = document.querySelector('.categray-l ul');
+      var leftLis = leftUl.children;
+      // console.log(leftUl);
+      var startY = 0;
+      var endY = 0;
+      var moveY = 0;
+      var currY = 0;//ul 当前的translateY
+      var startTime = 0;
+      var endTime = 0;
+      var currLiTop = 0;//触发事件时Li距离顶部的距离
+      var liHeight = leftUl.children[0].offsetHeight;
+      var maxY = 150;
+      var listTop = 0;
+      var parentH = leftUl.parentNode.offsetHeight;
+          parentH = parentH -44;
+      // console.log(parentH);
+      var leftUlH = leftUl.offsetHeight;
+      var cpCha = leftUlH - parentH;
+      for(var i = 0 ; i < leftLis.length ; i++){
+           leftLis[i].dataset.index = i;
+           leftUl.children[i].children[0].text +=i;
+         }
+      leftUl.addEventListener('touchstart',function(e){
+        // console.log(e);
+        startTime = new Date().getTime();
+        startY = e.touches[0].clientY;
+      })
+      leftUl.addEventListener('touchmove',function(e){
+        e.preventDefault();
+        endY = e.touches[0].clientY;
+        moveY = startY - endY;//当前移动的距离
+        if(moveY>=(currY-150)&&(currY - moveY)>=-(150+cpCha)){
+          removeTransition();
+          leftUl.style.transform = 'translateY('+(currY-moveY)+'px)';
+        }
+      })
+      leftUl.addEventListener('touchend',function(e){
+        endTime = new Date().getTime();
+        var target = e.target.parentNode;
+        if(endTime - startTime<200){
+          addTransition();
+          // console.log(target)
+          document.querySelector('.categray-l ul .now').classList.remove('now');
+          target.classList.add('now');
+
+
+          if(liHeight*target.index>cpCha){
+            leftUl.style.transform = 'translateY(-'+cpCha+'px)';
+            currY = -cpCha;
+          }else{
+            leftUl.style.transform = 'translateY(-'+liHeight*target.index+'px)';
+            leftUl.style.webkitTransform = 'translateY(-'+liHeight*target.index+'px)';
+            currY = -liHeight*target.index; //点击之后 改变currY的值
+          }
+          // currY = listTop;
+        }else{
+          currY = currY - moveY;
+          if(currY-moveY>0){
+              addTransition();
+              currY = 0;
+              leftUl.style.transform = 'translateY(0)';
+              leftUl.style.webkitTransform = 'translateY(0)';
+            }
+            if(currY-moveY < -(leftUlH-parentH)){
+              addTransition();
+              currY = -(leftUlH-parentH);
+              leftUl.style.transform = 'translateY('+currY+'px)';
+              leftUl.style.webkitTransform = 'translateY('+currY+'px)';
+            }
+        }
+
+      })
+
+      var addTransition = function(){
+             leftUl.style.webkitTransition = "all .3s ease 0s";
+             leftUl.style.transition = "all .3s ease 0s";
+         };
+         /*删除过渡*/
+         var removeTransition = function(){
+             leftUl.style.webkitTransition = "all 0s ease 0s";
+             leftUl.style.transition = "all 0s ease 0s";
+         };
+    }
+  </script> -->
+
+</head>
+<body>
+  <div class="top">
+    <a href="" class="icon-back"></a>
+    <form action="">
+      <input type="search" placeholder="中兴A1 预约免费抽手机">
+    </form>
+    <a href="" class="icon-menu"></a>
+  </div>
+  <div class="main">
+    <div class="categray-l">
+      <ul>
+        <li><a href="javascript:;">热门推荐</a></li>
+        <li class="now"><a href="javascript:;">潮流女装</a></li>
+        <li><a href="javascript:;">品牌男装</a></li>
+        <li><a href="javascript:;">内衣配饰</a></li>
+        <li><a href="javascript:;">家用电器</a></li>
+        <li><a href="javascript:;">热门推荐</a></li>
+        <li><a href="javascript:;">潮流女装</a></li>
+        <li><a href="javascript:;">品牌男装</a></li>
+        <li><a href="javascript:;">内衣配饰</a></li>
+        <li><a href="javascript:;">家用电器</a></li>
+        <li><a href="javascript:;">热门推荐</a></li>
+        <li><a href="javascript:;">潮流女装</a></li>
+        <li><a href="javascript:;">品牌男装</a></li>
+        <li><a href="javascript:;">内衣配饰</a></li>
+        <li><a href="javascript:;">家用电器</a></li>
+      </ul>
+    </div>
+    <div class="categray-r">
+      <div class="banner">
+        <a href=""><img src="img/banner_1.jpg" alt=""></a>
+      </div>
+      <div class="catetype">
+        <h3>热门商品</h3>
+        <ul class="clearfix">
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+          <li>
+            <a href=""><img src="img/nv-fy.jpg" alt=""></a>
+            <p>毛呢大衣</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var ul = document.querySelector('.categray-l ul');
+    var lis = ul.children;//li
+    var ulStart = 0;//ul 现在位置
+    var ulCurr = 0;//ul当前位置
+    var ulEnd = 0;//ｕｌ　结束位置
+    var ulH = ul.offsetHeight;//ul高度
+    var liH = lis[0].offsetHeight;//li高度
+
+    var parentH = ul.parentNode.offsetHeight;//ul父亲
+    parentH = parentH -44;
+
+    var startY = 0;//鼠标初始位置
+    var currY = 0;//鼠标当前值
+    var endY = 0;//鼠标离开的位置
+    var cha = 0;
+
+    var startTime = 0;//开始点击的时间
+    var endTime = 0;//结束的时间
+    //ul移动
+    ul.addEventListener('touchstart',function(e){
+      // addTransition(ul);
+      removeTransition(ul);
+      startTime = new Date().getTime();
+      startY = e.touches[0].clientY;
+      // console.log(startY);
+    })
+    ul.addEventListener('touchmove',function(e){
+      e.preventDefault();
+      //2.move的时候   li 随着鼠标的移动而移动
+      endY = e.touches[0].clientY;//获取到鼠标离开的位置
+      cha = startY - endY;//开始于离开的差值
+      // console.log(cha);
+
+      //4.通过判断ul离父亲的150 的时候  停止滑动
+      if(p>=150){
+        var p = ulCurr - cha;//接受ul  Y轴的值
+        p = 150;
+        ulCurr = 150;
+      }
+      //当ul移动到距离盒子上边150时  停止滑动
+      if( p<= -(parentH-150) ){
+        p = - parentH;
+      }
+       //更新Ul位置
+      ul.style.transform = 'translateY('+p+'px)';//动态的改变当前ul 的位置
+    })
+    ul.addEventListener('touchend',function(e){
+      ulCurr = ulCurr - cha;
+      // console.log('ulCurr===='+ulCurr)
+      //回弹 向上
+      endTime = new Date().getTime();
+      if(endTime - startTime<200){
+          //1.点击相应的li  让它自动的跑到顶部
+        for(var i = 0; i < lis.length;i++){
+          lis[i].index = i;//li绑定身份
+          lis[i].addEventListener('touchstart',function(){
+            ulCurr = this.index*(-liH);
+            // console.log(ulCurr);
+            addTransition(ul);
+            ul.style.transform = 'translateY('+ulCurr+'px)';
+            var target = document.querySelector('.categray-l ul li.now');
+            if(target){
+              target.classList.remove('now');
+            }
+            this.classList.add('now');
+          })
+        }
+
+      }else{
+        ///3.当ul跑到下边的时候  鼠标送开 让跑到初始值
+        //回弹  向上回弹
+        if(ulCurr>0){
+          addTransition(ul);
+          ulCurr = 0;
+          ul.style.transform = 'translateY(0)';
+        }//向下回弹   ul的高度 减去 父亲的高度
+        if(ulCurr < -(ulH - parentH)){
+          addTransition(ul);
+          ulCurr = -(ulH - parentH);
+          ul.style.transform = 'translateY('+ulCurr+'px)';
+        }
+      }
+    })
+    /**
+    *公共方法   私有化前缀
+    */
+    //添加过渡
+    function addTransition(ele){
+      ele.style.transition = 'all .4s ease';
+    }
+    //删除过渡
+    function removeTransition(ele){
+      ele.style.transition = '';
+    }
+  </script>
+</body>
+</html>

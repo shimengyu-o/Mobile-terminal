@@ -1,0 +1,271 @@
+html,body{
+  height: 100%;
+  font-size: 14px;
+  color: #000;
+}
+*[class^="icon-"],*[class*= " icon-"]{
+    background: url("../img/sprites.png") no-repeat left;
+    background-size: 200px 200px;
+}
+.layer{
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+/*头部样式*/
+.top{
+  position: fixed;
+  /*top: 0;
+  left: 0;*/
+  width: 100%;
+  max-width: 640px;
+  background-color: rgba(201,21,35,0);
+  z-index: 999;
+}
+.top .icon-logo{
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  display: block;
+  width: 58px;
+  height: 22px;
+  background-position: 0 -110px;
+}
+.top .search{
+  position: relative;
+  width: 100%;
+  padding: 5px 77px 0 77px;
+}
+.top .search input{
+  width: 100%;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.top .search .icon-search{
+  position: absolute;
+  top:5px;
+  left: 85px;
+  display: block;
+  width: 50px;
+  height: 30px;
+  background-position: -60px -105px;
+}
+.top span{
+  position: absolute;
+  top: 0;
+  right: 20px;
+  display: block;
+  width: 46px;
+  height: 100%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+}
+.banner{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.banner .swiper{
+  width: 1000%;
+  height: 100%;
+  transform: translateX(-10%);
+}
+.banner .swiper li{
+  display: block;
+  float: left;
+  width: 10%;
+  height: 100%;
+
+}
+.banner .swiper li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner .swiper li a img{
+  width: 100%;
+  height: 100%;
+}
+
+.banner .swiper-points{
+  position: absolute;
+  left:50%;
+  bottom: 10px;
+  width: 120px;
+  height: 6px;
+  margin-left: -60px;
+  /*background-color:red;*/
+}
+.banner .swiper-points li{
+  display: block;
+  float: left;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 6px;
+  border: 1px solid #fff;
+}
+.banner .swiper-points li.current{
+  background-color: red;
+}
+/*分类样式*/
+.categray{
+  width: 100%;
+  height: 150px;
+  padding-top: 10px;
+  background-color: #fff;
+}
+.categray ul{
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+.categray ul li{
+  display: block;
+  float: left;
+  width: 25%;
+  height: 50%;
+  text-align: center;
+}
+.categray ul li img{
+  width: 40px;
+  height: 40px;
+}
+.categray ul li p{
+  font-size: 12px;
+  color: #666;
+}
+/*商品模块*/
+.goods{
+  width: 100%;
+  margin-top: 7px;
+  padding: 0 5px;
+  background-color: #f5f5f5;
+}
+.goods .second{
+  width: 100%;
+  height: 222px;
+  background-color: #fff;
+}
+.goods .second .second-top{
+  width: 100%;
+  height: 20px;
+  float: left;
+  margin-top: 5px;
+}
+.goods .second .second-top .second-kill .icon-kill{
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  /*background-position: -158px -73px;*/
+  background: url('../img/seckill-icon.png') no-repeat center;
+  background-size: 18px 18px;
+}
+.goods .second .second-top .second-kill span{
+  line-height: 20px;
+  color: red;
+  padding: 0 10px 0 5px;
+  float: left;
+}
+.goods .second .second-top .second-kill .second-box{
+  height: 20px;
+  float: left;
+}
+.goods .second .second-top .second-kill .second-box span{
+  float: left;
+  display: block;
+  width: 14px;
+  height: 20px;
+  background-color: gray;
+  color: #fff;
+  margin-right: 2px;
+}
+.goods .second .second-top .second-kill .second-box span:nth-child(3n){
+  width: 10px;
+  color: #000;
+  background-color: #fff;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.goods .second a{
+  float: right;
+  color: #666;
+}
+.goods .second .second-list ul{
+
+}
+.goods .second .second-list ul li{
+  float: left;
+  width: 33.33%;
+  height: 180px;
+  text-align: center;
+  border-bottom: 10px;
+}
+.goods .second .second-list ul li a{
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  border-right: 2px solid #dcdcdc;
+}
+.goods .second .second-list ul li img{
+  width: 60%;
+}
+.goods .second .second-list ul li .new{
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #d8505c;
+}
+.goods .second .second-list ul li .old{
+  font-size: 12px;
+  line-height: 16px;
+  color: #666;
+  text-decoration: line-through;
+}
+/*超值购*/
+.goods .shopping{
+  width: 100%;
+  height: 220px;
+  margin-top: 10px;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+.goods .shopping .shopping-top{
+  height: 30px;
+  line-height: 30px;
+}
+.goods .shopping .shopping-top::before{
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 12px;
+  background-color: red;
+  margin-right: 5px;
+}
+.goods .shopping .shopping-top span{
+  color: #666;
+}
+.shopping .shopping-list .pro1{
+  float: left;
+  width: 50%;
+}
+.shopping .shopping-list .pro1 img{
+  width: 100%;
+}
+.shopping .shopping-list .pro2,.shopping .shopping-list .pro3{
+  float: right;
+  width: 50%;
+}
+.shopping .shopping-list .pro2 img,.shopping .shopping-list .pro3 img{
+  width: 100%;
+}
+.shopping .shopping-list .pro2{
+  border-bottom: 1px solid #dcdcdc;
+}

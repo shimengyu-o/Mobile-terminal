@@ -1,0 +1,285 @@
+html,body{
+  height: 100%;
+  font-size: 14px;
+  color: #000;
+  background-color: #f5f5f5;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+*[class^="icon-"],*[class*= " icon-"]{
+    background: url("../img/sprites.png") no-repeat left;
+    background-size: 200px 200px;
+}
+.top{
+  position:relative;
+  /*top: 0;
+  left: 0;*/
+  width: 100%;
+  height: 45px;
+  background: url("../img/header-bg.png") repeat-x;
+  background-size: 1px 44px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.top .icon-back{
+  position: absolute;
+  top: 0;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 44px;
+  background-position: -20px 12px;
+  padding: 10px 12px;
+}
+.top span{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  font-size: 16px;
+  text-align: center;
+}
+.top .icon-menu{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  background-position: -60px 0;
+  display: block;
+  margin: 12px 10px;
+}
+/*安全提示*/
+.banner .safe{
+  position: relative;
+  height: 35px;
+  line-height: 35px;
+  color: #888;
+  background: #fff;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+.banner .safe p{
+  position: relative;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  padding-left: 25px;
+  color: #686868;
+}
+.banner .safe p::before{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url('../img/safe_icon.png') no-repeat;
+  background-size: 18px 18px;
+}
+/*商店*/
+.banner .shop{
+  position: relative;
+  padding-top: 10px;
+}
+.banner .shop .shopname{
+  width: 100%;
+  height: 36px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.banner .shop .shopname .shopcheck{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+}
+.shop .shopname .shopcheck .checkbox{
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('../img/shop-icon.png') no-repeat -25px 0;
+  background-size: 50px 100px;
+}
+/*.checkbox[checked]{
+  background-position: 0 0;
+}*/
+
+.shop .shopname .shoptitle{
+  padding: 0 10px 0 40px;
+  font-size: 12px;
+  line-height: 36px;
+}
+.shop .shopname .shoptitle img{
+  float: left;
+  width: 15px;
+  height: 13px;
+  margin-top: 10px;
+}
+.shop .shopname .shoptitle .name{
+  margin-left: 3px;
+  float: left;
+}
+.shop .shopname .shoptitle .tip{
+  color: #f15353;
+  float: right;
+}
+/*商品明细*/
+.shop .pro{
+
+}
+.shop .pro ul li{
+  position: relative;
+  height: 135px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+.shop .pro ul li .pro-check{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 40px;
+}
+.shop .pro ul li .pro-check .checkbox{
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('../img/shop-icon.png') no-repeat -25px 0;
+  background-size: 50px 100px;
+}
+.shop .pro ul li .pro-desc{
+  position: relative;
+  padding-left: 50px;
+  height: 100%;
+}
+.shop .pro ul li .pro-desc img{
+  position: absolute;
+  top:10px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e0e0e0;
+}
+.shop .pro ul li .pro-desc .mask{
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  width: 80px;
+  height: 20px;
+  background: rgba(0,0,0,.5);
+  border: none;
+  color: #fff;
+  text-align: center;
+}
+.shop .pro ul li .pro-desc span{
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 60px;
+  height: 20px;
+  border: 1px solid #848689;
+}
+.shop .pro ul li .pro-info{
+  position: absolute;
+  top: 10px;
+  left: 140px;
+  height: 80px;
+}
+.shop .pro ul li .pro-info a{
+  color: #848689;
+}
+.shop .pro ul li .pro-info p{
+  color: #848689;
+  padding: 10px 0;
+}
+
+.shop .pro ul li .pro-info .sim{
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+  line-height: 20px;
+  border: 1px solid #848689;
+  font-size: 12px;
+  color: #848689;
+  text-align: center;
+}
+/*.shop .pro ul li .pro-info .sim::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 120px;
+  width: 22px;
+  height: 22px;
+  background: url('../img/delete_down.png') no-repeat;
+  background-size: 22px 22px;
+}*/
+.shop .pro ul li .pro-info .del{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-right: 5px;
+}
+.shop .pro ul li .pro-info .del .del-h img{
+  position: absolute;
+  top: -1px;
+  left: 5px;;
+  width:80%;
+  height: 5px;
+  transform-origin: 0% 0%;
+  transform: rotate(0);
+  transition: all .4s ease;
+}
+/*.shop .pro ul li .pro-info .del .del-b img{
+
+}*/
+.mask1{
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  max-width: 640px;
+  display: none;
+}
+.mask1 .main{
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  background-color:#fff;
+  text-align: center;
+  line-height: 50px;
+  transform: translateY(-200px);
+  animation: move .4s ease both;
+}
+@keyframes move{
+  0%{
+    transform: translateY(-80px);
+  }
+  25%{
+     transform: translateY(-50px);
+  }
+  50%{
+     transform: translateY(-10px);
+  }
+  75%{
+     transform: translateY(0px);
+  }
+  100%{
+     transform: translateY(-10px);
+  }
+}
